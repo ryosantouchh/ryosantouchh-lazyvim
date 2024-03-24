@@ -1,7 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = {
-    "nvim-tree/nvim-web-devicons"
+    "nvim-tree/nvim-web-devicons",
   },
   config = function()
     local nvimtree = require("nvim-tree")
@@ -12,37 +12,38 @@ return {
 
     -- color for arrows in tree to lightblue
     vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
-    
+
     -- config nvim-tree here
     nvimtree.setup({
       view = {
         width = 40,
+        signcolumn = "yes",
       },
       renderer = {
-	icons = {
-	  glyphs = {
-	    folder = {
-	      arrow_closed = "→",
-	      arrow_open = "↓",
-	    },
-	  },
-	},
+        icons = {
+          glyphs = {
+            folder = {
+              arrow_closed = "→",
+              arrow_open = "↓",
+            },
+          },
+        },
       },
       -- disable window picker
       -- explorer to work well with
       -- window splits
       actions = {
-	open_file = {
-	  window_picker = {
-	    enable = false
-	  },
-	},
+        open_file = {
+          window_picker = {
+            enable = false,
+          },
+        },
       },
       filters = {
-	custom = { ".DS_Store" },
+        custom = { ".DS_Store" },
       },
       git = {
-	ignore = false
+        ignore = false,
       },
     })
 
@@ -53,5 +54,5 @@ return {
     keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>")
     keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>")
     keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>")
-  end
+  end,
 }

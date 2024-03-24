@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.g.autoformat = ture
+vim.g.autoformat = true
 
 local opt = vim.opt
 
@@ -18,7 +18,7 @@ opt.wrap = false
 
 -- searching
 opt.ignorecase = true -- ignore case
-opt.smartcase = true -- mixed case in search
+opt.smartcase = true  -- mixed case in search
 
 opt.cursorline = true
 
