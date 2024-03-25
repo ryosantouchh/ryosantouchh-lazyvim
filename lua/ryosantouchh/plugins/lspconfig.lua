@@ -38,8 +38,8 @@ return {
         lsp_zero.default_keymaps(opts)
         vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<cr>", opts)
         vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-        vim.keymap.set("n", "<leader>gj", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
-        vim.keymap.set("n", "<leader>gk", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
+        vim.keymap.set("n", "<leader>gk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
+        vim.keymap.set("n", "<leader>gj", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
 
         lsp_zero.buffer_autoformat()
       end)

@@ -22,7 +22,7 @@ return {
 
     cmp.setup({
       completion = {
-        completeopt = "menu,menuone,noinsert",
+        completeopt = "menu,menuone,preview,noselect",
       },
       snippet = { -- configure how nvim-cmp interacts with snippet engine
         expand = function(args)
@@ -32,7 +32,6 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       },
-      preselect = "item",
       mapping = cmp.mapping.preset.insert({
         ["<S-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
         ["<S-j>"] = cmp.mapping.select_next_item(), -- next suggestion
@@ -41,7 +40,8 @@ return {
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(),    -- close completion window
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+        ["<Tab>"] = cmp_action.luasnip_supertab(),
+        ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({

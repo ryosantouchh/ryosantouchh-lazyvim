@@ -52,8 +52,8 @@ return {
     -- configure lualine with modified theme
     lualine.setup({
       options = {
-        -- theme = "onedark",
-        theme = "catppuccin",
+        theme = "onedark",
+        -- theme = "catppuccin",
       },
       sections = {
         lualine_x = {
