@@ -12,11 +12,12 @@ return {
       },
     },
     plugins = {
-      options ={
+      options = {
         enabled = true,
         showcmd = true,
       },
-      tmux = { enabled = false },
+      tmux = { enabled = true },
+      gitsigns = { enabled = true },
     },
   },
 }
